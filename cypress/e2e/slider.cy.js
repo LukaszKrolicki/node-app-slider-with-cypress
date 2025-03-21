@@ -3,6 +3,7 @@ describe('Swiper Gallery Test', function () {
     cy.visit('http://localhost:3000');
     cy.get('.swiper-button-next').click();
     cy.get('.swiper-slide-active').should('contain', 'United Kingdom');
+    cy.screenshot()
   });
 });
 
@@ -14,6 +15,7 @@ describe('Swiper Gallery Test', function () {
     cy.get('.swiper-button-next').click({ force: true });
     cy.wait(2000);
     cy.get('.swiper-slide-active').should('contain', 'Paris');
+    cy.screenshot()
   });
 });
 
@@ -28,5 +30,6 @@ describe('Swiper Gallery Navigation Test', function () {
     // Click the previous button and check if the previous slide is displayed
     cy.get('.swiper-button-prev').click();
     cy.get('.swiper-slide-active').should('not.have.class', 'swiper-slide-next');
+    cy.screenshot()
   });
 });
